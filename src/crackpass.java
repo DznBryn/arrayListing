@@ -34,7 +34,8 @@ public class crackpass {
                                 String findpass = characters[i]+characters[j]+characters[k]+characters[l];
                                 
                                 if(in.equals(findpass)){
-                                    System.out.print("found password: " + findpass);
+                                    
+                                    System.out.println("found password: " + findpass);
                                     System.exit(0);
                                 }
 //                                    System.out.println("Found password: " + findpass);

@@ -21,12 +21,12 @@ public class Pick4me {
         // TODO code application logic here
         Scanner in = new Scanner(System.in);
         
-//        System.out.println("Having a tough time picking a spot to eat?\nTell us what your in the mood for:");
-//        String userPicks = in.nextLine();
+        System.out.println("Having a tough time picking a spot to eat?\nTell us what your in the mood for:");
+        String userPicks = in.nextLine();
 
         // Problem: Needs to take an array of user inputs
-        String[] lunchSpot = {"a","b","c","d","e","f","g","h","i","j","k","l","m",
-                              "n","o","p","q","r","s","t","u","v","w","x","y","z"};
+        // Solved: Using ".split()" takes user input into an Array
+        String[] lunchSpot = userPicks.toLowerCase().split("[^\\w]+");
         System.out.println(picklunchspot(lunchSpot));
     }
     
@@ -34,9 +34,12 @@ public class Pick4me {
     // Function: array of lunch spots input by the user that will randomly pick a spot 
     public static String picklunchspot(String... spots){
         Random random = new Random();
+        System.out.println("Picking " + spots.length + " spots");
         if(spots.length == 0){
             System.out.printf("There are %d spots chosen.", spots.length);
         }
         return spots[random.nextInt(spots.length)];
     };
+    
+    
 }
